@@ -11,6 +11,7 @@ dependencies:
       - sudo service docker start
       - sudo usermod -aG docker ubuntu
       - sleep 10
+      - cat /etc/default/docker
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
       - sudo apt-get install -y apparmor
