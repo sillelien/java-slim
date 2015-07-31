@@ -4,6 +4,12 @@ Java Slim uses packr and Docker to produce a small Docker image for your Java ap
 
 **If you use this image please consider giving it a star on [Github](https://github.com/Sillelien/jess-builder)**
 
+Please use the tagged version:
+
+```
+FROM sillelien/java-slim:0.1
+```
+
 ## Build a Docker image from the current directory
 
 This builds a working Docker image from the current directory based on  [sillelien/jess:master](https://registry.hub.docker.com/u/sillelien/jess/) - so they are pretty small.
