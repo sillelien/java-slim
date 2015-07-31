@@ -8,6 +8,8 @@ Java Slim uses packr and Docker to produce a small Docker image for your Java ap
 
 This builds a working Docker image from the current directory based on  [sillelien/jess:master](https://registry.hub.docker.com/u/sillelien/jess/) - so they are pretty small.
 
+The final Java Docker image produced starts from 69MB unpacked compared to the smallest Java+Docker image of 165Mb. The docker image includes glibc, core debian files, busybox and S6 process supervisor - so you're not cutting corners.
+
 ```
    docker run -ti -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/build sillelien/java-slim:master image-tag executable-name jar-file resources-dir main-class
 ```
