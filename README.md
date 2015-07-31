@@ -17,13 +17,13 @@ This builds a working Docker image from the current directory based on  [silleli
 The final Java Docker image produced starts from 69MB unpacked compared to the smallest Java+Docker image of 165Mb. The docker image includes glibc, core debian files, busybox and S6 process supervisor - so you're not cutting corners.
 
 ```
-   docker run -ti -v /var/run/docker.sock:/tmp/docker.sock -v $(pwd):/build sillelien/java-slim:master image-tag executable-name jar-file resources-dir main-class
+   docker run -ti -v /var/run/docker.sock:/tmp/docker.sock -v $(pwd):/build sillelien/java-slim:0.1 image-tag executable-name jar-file resources-dir main-class
 ```
 
 For example:
 
 ```
-docker run -ti -v /var/run/docker.sock:/tmp/docker.sock -v $(pwd):/build java-slim helloworld hello-world target/java-slim.helloworld-1.0-SNAPSHOT.jar src/main/resources sillelien.HelloWorld
+docker run -ti -v /var/run/docker.sock:/tmp/docker.sock -v $(pwd):/build sillelien/java-slim:0.1 helloworld hello-world target/java-slim.helloworld-1.0-SNAPSHOT.jar src/main/resources sillelien.HelloWorld
 ```
 
 THis will produce an 82MB (uncompressed) Docker image.
