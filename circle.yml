@@ -12,6 +12,7 @@ dependencies:
 
 test:
   override:
+    - cat /etc/default/docker
     - sudo chmod 777 /var/run/docker.sock && ./test.sh
 
 
