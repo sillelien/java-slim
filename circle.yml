@@ -10,6 +10,7 @@ dependencies:
       - sudo apt-get update
       - sudo apt-get remove -y lxc-docker lxc-docker-1.7.0 && sudo apt-get autoremove
       - sudo apt-get install -y linux-image-virtual linux-image-extra-virtual
+      - sudo rm /etc/default/docker
       - sudo apt-get update
       - wget -qO- https://get.docker.com/ | sudo sh
       - sudo service docker start
