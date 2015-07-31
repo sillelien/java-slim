@@ -1,6 +1,6 @@
 # Java Slim
 
-Java Slim uses packr and Docker to produce a small Docker image for your Java app
+Java Slim uses packr, Docker and [jess](http://github.com/sillelien/jess-builder) to produce a small Docker image for your Java app
 
 **If you use this image please consider giving it a star on [Github](https://github.com/Sillelien/jess-builder)**
 
