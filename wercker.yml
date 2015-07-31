@@ -21,8 +21,5 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - script:
-        name: maven
-        code: mvn clean install
-    - script:
         name: test.sh
         code: bash -c "./test.sh"
