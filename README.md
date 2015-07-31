@@ -30,7 +30,7 @@ Additional configuration can be passed into the docker run command as environmen
 
 [![Docker Registry](https://img.shields.io/docker/pulls/sillelien/java-slim.svg)](https://registry.hub.docker.com/u/sillelien/java-slim)
 
-[![Image Layers](https://badge.imagelayers.io/sillelien/java-slim.svg)](https://imagelayers.io/?images=sillelien/java-slim:master 'Get your own badge on imagelayers.io') 
+[![Image Layers](https://badge.imagelayers.io/sillelien/java-slim.svg)](https://imagelayers.io/?images=sillelien/java-slim:latest 'Get your own badge on imagelayers.io') 
 
 
 ## Badges
