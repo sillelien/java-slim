@@ -7,6 +7,7 @@ dependencies:
     - "~/docker"
 
   override:
+      - sudo apt-get update
       - sudo apt-get remove -y lxc-docker lxc-docker-1.7.0
       - sudo apt-get install -y linux-image-virtual linux-image-extra-virtual
       - wget -qO- https://get.docker.com/ | sudo sh
