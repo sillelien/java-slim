@@ -3,5 +3,6 @@ RUN apt-get update && apt-get install -y build-essential gcc-multilib g++-multil
 RUN wget -qO- https://get.docker.com/ | sh
 COPY lib/* /app/
 COPY wrap.sh /wrap.sh
+VOLUME /build
 ENTRYPOINT ["/wrap.sh"]
 
