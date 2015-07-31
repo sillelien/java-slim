@@ -41,6 +41,8 @@ WORKDIR /app
 ENTRYPOINT ["/init","/app/$executable"]
 EOF
 
+echo "/etc/default/docker"
+cat  /etc/default/docker
 echo "Building Docker Image $tag" >&2
 
 docker build -t "$tag" .
