@@ -17,6 +17,7 @@ dependencies:
       - sudo chmod 777 /var/run/docker.sock
       - sleep 10
       - cat /etc/default/docker
+      - docker ps
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
 
