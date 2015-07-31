@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -ex
+set -e
 tag=$1
 shift
 executable=$1
