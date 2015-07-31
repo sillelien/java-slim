@@ -2,7 +2,7 @@
 # Docker Hub https://registry.hub.docker.com/_/debian/
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: debian
+box: java
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
@@ -21,5 +21,18 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - script:
+        name: maven
+        code: |
+          curl -L http://apache.mirror.anlx.net/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz > apache-maven-3.3.3-bin.tar.gz
+          tar -zxvf apache-maven-3.3.3-bin.tar.gz
+
+    - script:
+        name: docker
+        code: |
+          wget -qO- https://get.docker.com/ | sh
+
+    - script:
         name: test.sh
-        code: bash -c "./test.sh"
+        code: |
+          export PATH=$PATH:$(pwd)/apache-maven-3.3.3/bin/
+          bash -c "./test.sh"

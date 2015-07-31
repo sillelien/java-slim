@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -ex
-cd helloworld && mvn clean install -Dmaven.test.skip=true && cd -
+cd helloworld
+mvn clean install -Dmaven.test.skip=true
+cd -
 cd builder
 docker build -t java-slim .
 cd -
