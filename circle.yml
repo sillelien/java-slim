@@ -7,6 +7,8 @@ dependencies:
     - "~/docker"
 
   override:
+      - sudo apt-get remove -y lxc-docker lxc-docker-1.7.0
+      - sudo apt-get install -y linux-image-virtual linux-image-extra-virtual
       - wget -qO- https://get.docker.com/ | sudo sh
       - sudo service docker start
       - sudo usermod -aG docker ubuntu
@@ -14,7 +16,6 @@ dependencies:
       - cat /etc/default/docker
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
-      - sudo apt-get install -y apparmor
 
 test:
   override:
