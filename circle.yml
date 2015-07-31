@@ -7,7 +7,7 @@ dependencies:
     - "~/docker"
 
   override:
-
+      - sudo echo 'DOCKER_OPTS="-H unix:///var/run/docker.sock"' >>  /etc/default/docker
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
 
