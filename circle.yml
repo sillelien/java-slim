@@ -9,7 +9,7 @@ dependencies:
   override:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - ./build.sh
-      - cd builder && ocker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
+      - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
 
 test:
   override:
