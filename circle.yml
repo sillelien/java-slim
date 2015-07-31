@@ -1,0 +1,24 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+
+  override:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - ./build.sh
+      - cd builder && ocker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
+
+test:
+  override:
+    - ./test.sh
+
+
+deployment:
+  all:
+    branch: /.*/
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS 
+      - docker push sillelien/java-slim:${CIRCLE_BRANCH}
