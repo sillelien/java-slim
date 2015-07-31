@@ -10,13 +10,13 @@ dependencies:
       - sudo apt-get update
       - sudo apt-get remove -y lxc-docker lxc-docker-1.7.0 && sudo apt-get autoremove
       - sudo apt-get install -y linux-image-virtual linux-image-extra-virtual
-      - sudo apt-get update && sudo apt-get upgrade
+      - sudo apt-get update 
       - wget -qO- https://get.docker.com/ | sudo sh
       - sudo service docker start
       - sudo usermod -aG docker ubuntu
       - sudo chmod 777 /var/run/docker.sock
-      - sleep 10
       - cat /etc/default/docker
+      - sleep 10
       - docker ps
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - cd builder && docker build -t sillelien/java-slim:${CIRCLE_BRANCH} .
