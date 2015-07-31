@@ -43,6 +43,7 @@ EOF
 
 echo "/etc/default/docker"
 echo 'DOCKER_OPTS="-H unix:///var/run/docker.sock' >>  /etc/default/docker
+ls -la /var/run/docker.sock
 
 echo "Building Docker Image $tag" >&2
 
