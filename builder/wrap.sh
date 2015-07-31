@@ -43,12 +43,11 @@ EOF
 
 echo "/etc/default/docker"
 cat /etc/default/docker
-echo 'DOCKER_OPTS="-H unix:///tmp/docker.sock"' >>  /etc/default/docker
 ls -la /tmp/docker.sock
 ls -la /var/run
 echo "Building Docker Image $tag" >&2
 
-docker build -t "$tag" .
+docker -H unix:///tmp/docker.sock build -t "$tag" .
 
 echo "Built successfully, you can run now with: "  >&2
 echo "$ docker run -ti $tag" >&2
