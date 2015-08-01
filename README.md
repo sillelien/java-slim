@@ -33,7 +33,7 @@ THis will produce an 82MB (uncompressed) Docker image.
 Additional configuration can be passed into the docker run command as environment variables, they are:
 
 * JVM_ARGS - default JVM args to be used on every execution
-* JRE_MINIMIZE - the level of JRE minimization performed by packr hard/soft (default 'hard')
+* JRE_MINIMIZE - the level of JRE minimization performed by packr hard/soft/server (default 'server')
 
 
 [![Docker Registry](https://img.shields.io/docker/pulls/sillelien/java-slim.svg)](https://registry.hub.docker.com/u/sillelien/java-slim)

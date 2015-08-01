@@ -12,9 +12,9 @@ main=$(echo $1 | tr '.' '/')
 shift
 
 vmargs=${JVM_ARGS:--Xmx128m}
-jremin=${JRE_MINIMIZE:-hard}
+jremin=${JRE_MINIMIZE:-server}
 
-java -jar /app/packr.jar \
+java -cp /app -jar /app/packr.jar \
      -platform linux64 \
      -jdk "/app/zulu1.8.0_45-8.7.0.5-x86lx64.zip" \
      -executable $executable \
@@ -24,6 +24,9 @@ java -jar /app/packr.jar \
      -resources /build/$resources \
      -minimizejre "$jremin" \
      -outdir /out
+
+du -sh /build/$jar
+du -sh /out/*
 
 mkdir -p /out
 cd /out
